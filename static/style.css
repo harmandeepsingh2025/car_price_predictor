@@ -1,0 +1,238 @@
+/* Car Price Predictor - styles
+   Loaded AFTER Bootstrap, so these rules override Bootstrap's defaults. */
+
+:root {
+    --navy: #13233a;
+    --navy-light: #1e3554;
+    --amber: #f2a900;
+    --amber-dark: #d99500;
+    --page: #eef2f6;
+    --ink: #1b2430;
+    --muted: #6a7788;
+    --line: #d5dde6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------- Top banner ---------- */
+
+.banner {
+    position: relative;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: #fff;
+    text-align: center;
+    padding: 56px 0 110px;
+}
+
+.banner h1 {
+    margin: 0;
+    font-size: 2.3rem;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.banner .byline {
+    margin: 12px 0 0;
+    font-size: 1.15rem;
+    color: #c9d6e6;
+}
+
+.banner .byline u {
+    color: #fff;
+    text-decoration-color: var(--amber);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+}
+
+/* dashed "road line" along the bottom of the banner */
+.road-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 26px;
+    height: 4px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--amber) 0,
+        var(--amber) 36px,
+        transparent 36px,
+        transparent 64px
+    );
+    opacity: 0.85;
+}
+
+/* ---------- Card ---------- */
+
+.predictor-card {
+    width: 100%;
+    max-width: 720px;
+    margin: -64px 15px 60px;
+    border: 0;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 12px 34px rgba(19, 35, 58, 0.18);
+    overflow: hidden;
+}
+
+.predictor-card .card-header {
+    background: #fff;
+    padding: 26px 32px 18px;
+    border-bottom: 1px solid var(--line);
+}
+
+.predictor-card .card-header h5 {
+    margin: 0 0 6px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.predictor-card .card-header h5 i {
+    color: var(--amber);
+    margin-right: 8px;
+}
+
+.predictor-card .card-header p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.97rem;
+}
+
+.predictor-card .card-body {
+    padding: 28px 32px 32px;
+}
+
+/* ---------- Form ---------- */
+
+.form-row {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.form-row > [class*="col"] {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 0.93rem;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+label i {
+    width: 20px;
+    color: var(--muted);
+}
+
+.form-control {
+    height: 46px;
+    padding: 8px 14px;
+    font-size: 1rem;
+    color: var(--ink);
+    background-color: #f8fafc;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    transition: border-color 0.15s, box-shadow 0.15s, background-color 0.15s;
+}
+
+.form-control::placeholder {
+    color: #9aa6b4;
+}
+
+.form-control:hover {
+    border-color: #b6c3d1;
+}
+
+.form-control:focus {
+    background-color: #fff;
+    border-color: var(--navy-light);
+    box-shadow: 0 0 0 3px rgba(30, 53, 84, 0.15);
+    outline: 0;
+}
+
+/* ---------- Button ---------- */
+
+.btn-predict {
+    height: 50px;
+    margin-top: 4px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy);
+    background: var(--amber);
+    border: 0;
+    border-radius: 8px;
+    transition: background-color 0.15s, transform 0.1s;
+}
+
+.btn-predict:hover {
+    color: var(--navy);
+    background: var(--amber-dark);
+}
+
+.btn-predict:active {
+    transform: translateY(1px);
+}
+
+.btn-predict:focus {
+    box-shadow: 0 0 0 3px rgba(242, 169, 0, 0.4);
+}
+
+/* ---------- Result ---------- */
+
+.result-box {
+    margin-top: 10px;
+    padding: 18px 20px;
+    text-align: center;
+    background: var(--page);
+    border-left: 5px solid var(--amber);
+    border-radius: 8px;
+}
+
+.result-label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.result-value {
+    display: block;
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 576px) {
+    .banner {
+        padding: 40px 0 96px;
+    }
+
+    .banner h1 {
+        font-size: 1.6rem;
+    }
+
+    .predictor-card .card-header,
+    .predictor-card .card-body {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
